@@ -24,6 +24,7 @@ class SmsQuery {
     String? address,
     int? threadId,
     SmsQueryKind kind = SmsQueryKind.inbox,
+    SmsOrder? order,
   }) async {
     Map arguments = {};
     if (start != null && start >= 0) {
@@ -37,6 +38,11 @@ class SmsQuery {
     }
     if (threadId != null && threadId >= 0) {
       arguments["thread_id"] = threadId;
+    }
+    if (order == SmsOrder.asc) {
+      arguments["order"] = "date ASC";
+    } else if (order == SmsOrder.desc) {
+      arguments["order"] = "date DESC";
     }
 
     String function;
@@ -69,7 +75,7 @@ class SmsQuery {
     String? address,
     int? threadId,
     List<SmsQueryKind> kinds = const [SmsQueryKind.inbox],
-    bool sort = false,
+    SmsOrder? order,
   }) async {
     List<SmsMessage> result = [];
     for (var kind in kinds) {
@@ -79,11 +85,8 @@ class SmsQuery {
         address: address,
         threadId: threadId,
         kind: kind,
+        order: order,
       ));
-    }
-
-    if (sort == true) {
-      result.sort((a, b) => a.compareTo(b));
     }
 
     return (result);
@@ -96,5 +99,16 @@ class SmsQuery {
       SmsQueryKind.inbox,
       SmsQueryKind.draft,
     ]);
+  }
+
+  Future<SmsMessage?> get getMostRecentSms async {
+    var messages = await querySms(
+      count: 1,
+      order: SmsOrder.desc,
+    );
+    if (messages.isNotEmpty) {
+      return messages[0];
+    }
+    return null;
   }
 }

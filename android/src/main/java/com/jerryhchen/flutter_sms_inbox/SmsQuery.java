@@ -20,6 +20,7 @@ public class SmsQuery implements MethodChannel.MethodCallHandler {
         int threadId = -1;
         String address = null;
         SmsQueryRequest request;
+        String order = null;
         switch (call.method) {
             case "getInbox":
                 request = SmsQueryRequest.Inbox;
@@ -47,9 +48,12 @@ public class SmsQuery implements MethodChannel.MethodCallHandler {
         if (call.hasArgument("address")) {
             address = call.argument("address");
         }
+        if (call.hasArgument("order")) {
+            order = call.argument("order");
+        }
 
         SmsQueryHandler smsQueryHandler = new SmsQueryHandler(
-                this.applicationContext, result, request, start, count, threadId, address);
+                this.applicationContext, result, request, start, count, threadId, address, order);
         smsQueryHandler.handle();
     }
 }

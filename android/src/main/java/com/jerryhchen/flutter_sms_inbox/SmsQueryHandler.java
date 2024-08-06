@@ -14,23 +14,25 @@ public class SmsQueryHandler {
     private final SmsQueryRequest request;
     private final String address;
     private final int threadId;
+    private final String order;
     private int start;
     private int count;
 
     SmsQueryHandler(Context applicationContext, MethodChannel.Result result, SmsQueryRequest request,
-                    int start, int count, int threadId, String address) {
+                    int start, int count, int threadId, String address, String order) {
         this.applicationContext = applicationContext;
         this.result = result;
         this.request = request;
         this.threadId = threadId;
         this.address = address;
+        this.order = order;
         this.start = start;
         this.count = count;
     }
 
     void handle() {
         ArrayList<JSONObject> list = new ArrayList<>();
-        Cursor cursor = this.applicationContext.getContentResolver().query(this.request.toUri(), null, null, null, null);
+        Cursor cursor = this.applicationContext.getContentResolver().query(this.request.toUri(), null, null, null, order);
         if (cursor == null) {
             result.error("no_cursor", "flutter_sms_inbox plugin requires cursor to resolve content", null);
             return;

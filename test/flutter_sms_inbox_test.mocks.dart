@@ -37,7 +37,6 @@ class MockSmsQuery extends _i1.Mock implements _i2.SmsQuery {
     String? address,
     int? threadId,
     List<_i2.SmsQueryKind>? kinds = const [_i2.SmsQueryKind.inbox],
-    bool? sort = false,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -49,7 +48,6 @@ class MockSmsQuery extends _i1.Mock implements _i2.SmsQuery {
             #address: address,
             #threadId: threadId,
             #kinds: kinds,
-            #sort: sort,
           },
         ),
         returnValue: _i3.Future<List<_i2.SmsMessage>>.value(<_i2.SmsMessage>[]),

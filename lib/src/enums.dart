@@ -15,3 +15,5 @@ enum SmsMessageKind {
 }
 
 enum SmsQueryKind { inbox, sent, draft }
+
+enum SmsOrder { asc, desc }
