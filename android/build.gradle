@@ -1,4 +1,4 @@
-group 'com.juliusgithaiga.flutter_sms_inbox'
+group 'com.jerryhchen.flutter_sms_inbox'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -24,7 +24,7 @@ apply plugin: 'com.android.library'
 android {
     // Conditional for compatibility with AGP <4.2.
     if (project.android.hasProperty("namespace")) {
-        namespace 'com.juliusgithaiga.flutter_sms_inbox'
+        namespace 'com.jerryhchen.flutter_sms_inbox'
     }
 
     compileSdkVersion 31

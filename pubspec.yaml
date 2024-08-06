@@ -1,6 +1,6 @@
 name: flutter_sms_inbox
 description: Flutter SMS Inbox Plugin (Android only). This library allows users to easily query inbox messages.
-homepage: https://github.com/jgithaiga/flutter_sms_inbox
+homepage: https://github.com/jerryhchen97/flutter_sms_inbox
 version: 1.0.3
 
 environment:
@@ -31,7 +31,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.juliusgithaiga.flutter_sms_inbox
+        package: com.jerryhchen.flutter_sms_inbox
         pluginClass: FlutterSmsInboxPlugin
 
   # To add assets to your plugin package, add an assets section, like this:

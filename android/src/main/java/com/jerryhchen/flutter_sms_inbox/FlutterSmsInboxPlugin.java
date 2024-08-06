@@ -1,4 +1,4 @@
-package com.juliusgithaiga.flutter_sms_inbox;
+package com.jerryhchen.flutter_sms_inbox;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
@@ -12,7 +12,7 @@ import io.flutter.plugin.common.MethodChannel.Result;
 
 /** FlutterSmsInboxPlugin */
 public class FlutterSmsInboxPlugin implements FlutterPlugin, MethodCallHandler {
-  private static final String CHANNEL_QUERY = "plugins.juliusgithaiga.com/querySMS";
+  private static final String CHANNEL_QUERY = "plugins.jerryhchen.com/querySMS";
 
   private MethodChannel methodChannel;
   private MethodChannel querySmsChannel;

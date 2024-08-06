@@ -1,4 +1,4 @@
-package com.juliusgithaiga.flutter_sms_inbox_example;
+package com.jerryhchen.flutter_sms_inbox_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 

@@ -7,7 +7,7 @@ class SmsQuery {
   factory SmsQuery() {
     if (instance == null) {
       const MethodChannel methodChannel = MethodChannel(
-        "plugins.juliusgithaiga.com/querySMS",
+        "plugins.jerryhchen.com/querySMS",
         JSONMethodCodec(),
       );
       instance = SmsQuery._private(methodChannel);

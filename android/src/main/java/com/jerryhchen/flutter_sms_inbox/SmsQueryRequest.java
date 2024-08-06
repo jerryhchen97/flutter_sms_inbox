@@ -1,4 +1,4 @@
-package com.juliusgithaiga.flutter_sms_inbox;
+package com.jerryhchen.flutter_sms_inbox;
 
 import android.net.Uri;
 
